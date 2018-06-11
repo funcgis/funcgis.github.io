@@ -101,7 +101,7 @@
 <meta property="og:description" content="使用Three.js绘制动态2D圆。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/funcgis/AnimationCircle/master/images/result.gif">
-<meta property="og:updated_time" content="2018-06-11T07:30:21.173Z">
+<meta property="og:updated_time" content="2018-06-11T07:43:45.930Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="动态2D圆效果">
 <meta name="twitter:description" content="使用Three.js绘制动态2D圆。">
@@ -467,9 +467,8 @@
       
 
       
-        <h2 id="相关知识"><a href="#相关知识" class="headerlink" title="相关知识"></a>相关知识</h2><p>​    </p>
-<p>随着浏览器和手机等各种硬件设备性能的提高，AR、VR的火爆，3D技术逐渐被人们所广泛使用。由于从WebGL底层直接开发三维应用太过复杂，各种基于WebGL，封装了底层的图形接口，使得程序员能够在无需掌握繁冗的图形学知识的情况下，也能用简单的代码实现三维场景的渲染。因此，各种三维图形库开始受到开发者越来越多的关注。这其中，Three.js是的主要的一个3D javascript库。<a href="https://threejs.org/。" target="_blank" rel="noopener">https://threejs.org/。</a></p>
-<h2 id="实现效果"><a href="#实现效果" class="headerlink" title="实现效果"></a>实现效果</h2><p>​    本次要实现的效果，就是基于Three.js引擎，实现一个雷达效果的动态圆插件，效果如下图所示：</p>
+        <h2 id="相关知识"><a href="#相关知识" class="headerlink" title="相关知识"></a>相关知识</h2><p>随着浏览器和手机等各种硬件设备性能的提高，AR、VR的火爆，3D技术逐渐被人们所广泛使用。由于从WebGL底层直接开发三维应用太过复杂，各种基于WebGL，封装了底层的图形接口，使得程序员能够在无需掌握繁冗的图形学知识的情况下，也能用简单的代码实现三维场景的渲染。因此，各种三维图形库开始受到开发者越来越多的关注。这其中，Three.js是的主要的一个3D javascript库。<a href="https://threejs.org/。" target="_blank" rel="noopener">https://threejs.org/。</a></p>
+<h2 id="实现效果"><a href="#实现效果" class="headerlink" title="实现效果"></a>实现效果</h2><p>本次要实现的效果，就是基于Three.js引擎，实现一个雷达效果的动态圆插件，效果如下图所示：</p>
 <p><img src="https://raw.githubusercontent.com/funcgis/AnimationCircle/master/images/result.gif" alt="插件效果示例"></p>
 <h2 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h2><p>从动画中可以看出，最底层是有一个无变化的基础圆，上层有两个半径不断增大，透明度不断变小的动态圆构成的动画。由此我们首先需要创建一个不变的圆：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建Circle Geometry</span></span><br><span class="line"><span class="keyword">var</span> circleBufferGeometry = <span class="keyword">new</span> THREE.CircleBufferGeometry( <span class="keyword">this</span>.radius, <span class="keyword">this</span>.segments );</span><br><span class="line"></span><br><span class="line"><span class="comment">//创建材质</span></span><br><span class="line"><span class="keyword">var</span> materialMain = <span class="keyword">new</span> THREE.MeshBasicMaterial( &#123; <span class="attr">color</span>: color, <span class="attr">opacity</span>: <span class="number">0.3</span>, <span class="attr">transparent</span>: <span class="literal">true</span>, <span class="attr">side</span>: THREE.DoubleSide&#125; );</span><br><span class="line"></span><br><span class="line"><span class="comment">//由材质和Geometry创建Mesh        </span></span><br><span class="line"><span class="keyword">this</span>._circleMain = <span class="keyword">new</span> THREE.Mesh( circleBufferGeometry, materialMain );</span><br><span class="line"></span><br><span class="line"><span class="comment">//将Mesh加入到场景中</span></span><br><span class="line"><span class="keyword">this</span>.scene.add( <span class="keyword">this</span>._circleMain );</span><br></pre></td></tr></table></figure>
@@ -711,7 +710,7 @@
               
               
               <div class="site-state-item site-state-categories">
-                <a href="/archives/index.html">
+                <a href="/categories/index.html">
                   <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
